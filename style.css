@@ -168,7 +168,6 @@ h1 .dot{color:var(--accent)}
     display: inline-block;
     border-radius: 50%;
     padding: 2px;  /* thickness of the border */
-    margin-right: 100px;
     background: linear-gradient(135deg, #7a42ff, #ff2e7e); /* neon gradient border */
     box-shadow:
         0 0 25px rgba(122, 66, 255, 0.6),
@@ -339,6 +338,24 @@ h1 .dot{color:var(--accent)}
     background: rgba(122,66,255,.18);
     border:1px solid rgba(122,66,255,.45);
     box-shadow: 0 6px 18px rgba(122,66,255,.25) inset;
+}
+
+@media (max-width: 720px) {
+  .biography .bio-container {
+    grid-template-columns: 1fr;   /* one column only */
+    grid-template-rows: auto auto; /* avatar row, then text row */
+    row-gap: 24px;                /* space between avatar and text */
+    text-align: center;           /* optional: center text on small screens */
+  }
+
+  .bio-avatar {
+    margin-right: 0;              /* remove extra right margin */
+    justify-self: center;         /* keep avatar centered */
+  }
+
+  .bio-text {
+    text-align: left;             /* or center if you prefer */
+  }
 }
 
 /* responsive stacking */
@@ -618,16 +635,17 @@ h1 .dot{color:var(--accent)}
   .project-card .body h3{ font-size:1.02rem; }
   .project-card .body p{ font-size:.95rem; }
 }
-/* === Education Timeline (Vertical) === */
+/* === Career Timeline (Vertical) === */
 
-.edu-timeline {
-  list-style: none;
-  margin: 1.25rem 0 0;
-  padding: 0 0 0 58px;
-  position: relative;
+.career-timeline {
+    list-style: none;
+    margin: 1.25rem 0 0;
+    padding-left: 58px;
+    position: relative;
+    overflow: visible;
 }
 
-.edu-timeline::before {
+.career-timeline::before {
   content: "";
   position: absolute;
   left: 28px;   /* timeline line position */
@@ -638,11 +656,11 @@ h1 .dot{color:var(--accent)}
 }
 
 /* Each row: make first column match the logo width, add gap */
-.edu-item{
+.career-item{
   position:relative;
   display:grid;
-  grid-template-columns: 80px 1fr;  /* was 56px 1fr */
-  column-gap:18px;                  /* space between logo and card */
+  grid-template-columns: 90px 1fr;  /* was 56px 1fr */
+  column-gap:20px;                  /* space between logo and card */
   align-items:start;
   margin-bottom:28px;
   min-height:80px;                  /* ensures room for the logo */
@@ -650,7 +668,7 @@ h1 .dot{color:var(--accent)}
 
 
 /* timeline node (aligned to the line) */
-.edu-node {
+.career-node {
     position: absolute;
     left: -29px;
     top: 40px;  /* half of logo height (80px / 2) */
@@ -666,54 +684,88 @@ h1 .dot{color:var(--accent)}
 }
 
 /* Logo box (handles any logo shape nicely) */
-.edu-logo {
-  width: 90px;        
+.career-logo {
+  width: 90px;
   height: 90px;
   object-fit: contain;
-  border-radius: 16px;   /* slightly larger corners */
+  border-radius: 16px;
   background: rgba(255,255,255,.06);
   border: 1px solid rgba(255,255,255,.10);
   box-shadow: 0 6px 18px rgba(0,0,0,.25), inset 0 1px 0 rgba(255,255,255,.06);
-  padding: 10px;         /* scale padding slightly */
+  padding: 10px;
   backdrop-filter: blur(6px);
-  margin-right: 100px;
 }
 
 /* Card */
-.edu-body{
-  background: rgba(255,255,255,.06);
-  border:1px solid rgba(255,255,255,.10);
-  border-radius:18px;
-  padding:20px 22px;
-  box-shadow: 0 8px 24px rgba(0,0,0,.25), inset 0 1px 0 rgba(255,255,255,.06);
-  transition: transform .18s ease, border-color .18s ease, box-shadow .18s ease;
+.career-body{
+    background: rgba(255,255,255,.06);
+    border:1px solid rgba(255,255,255,.10);
+    border-radius:18px;
+    padding:20px 22px;
+    box-shadow: 0 8px 24px rgba(0,0,0,.25), inset 0 1px 0 rgba(255,255,255,.06);
+    transition: transform .18s ease, border-color .18s ease, box-shadow .18s ease;
+    overflow: hidden;
 }
-.edu-body h3 {
+.career-body h3 {
   margin: 0 0 6px;
-  font-size: 1.25rem;    /* was ~1.05rem */
+  font-size: 1.25rem;
   letter-spacing: .2px;
+
+  /* prevent wrapping, cut off long names */
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
 }
 
-.edu-body p {
+.career-body p {
   margin: 0;
   opacity: .9;
   font-size: 1.05rem;    /* was .95rem */
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
 }
 
-.edu-item:hover .edu-body, 
-.edu-item:hover .edu-logo {
+.career-item:hover .career-body, 
+.career-item:hover .career-logo {
   /*transform: translateY(-2px);*/
   border-color: rgba(255,46,126,.30);
   box-shadow: 0 12px 28px rgba(0,0,0,.35), 0 0 0 1px rgba(255,46,126,.12) inset;
 }
 
 /* Compact on small screens */
-@media (max-width:520px){
-  .edu-timeline{ padding-left:100px; }
-  .edu-timeline::before{ left:40px; }
-  .edu-node{ left:40px; top:40px; }
-  .edu-item{ grid-template-columns:72px 1fr; }
-  .edu-logo{ width:72px; height:72px; border-radius:14px; }
+@media (max-width: 700px){
+    .career-timeline{ padding-left:40px;}
+    .career-timeline::before{ left:10px;}
+    .career-node{left: -29px;}
+
+    /* hide the full text */
+    .career-body h3 {
+        visibility: collapse;
+        position: relative;
+    }
+    .career-body h3::after {
+        content: attr(data-short);
+        visibility: visible;
+        position: absolute;
+        left: 0;
+        top: 0;
+        white-space: nowrap;
+    }
+
+    /* hide the full text */
+    .career-body p {
+        visibility: collapse;
+        position: relative;
+    }
+    .career-body p::after {
+        content: attr(data-short);
+        visibility: visible;
+        position: absolute;
+        left: 0;
+        top: 0;
+        white-space: nowrap;
+    }
 }
 
 
