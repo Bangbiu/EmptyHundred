@@ -1,0 +1,493 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1.0, viewport-fit=cover"
+    />
+    <title>Empty Han</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;800&family=Playfair+Display:wght@600;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="/style.css" />
+    <link rel="stylesheet"
+      href="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/devicon.min.css">
+  </head>
+  <body>
+    <!-- NAV -->
+    <header class="nav">
+      <a class="brand" href="#bg">
+        <!-- simple mark -->
+        <svg width="28" height="28" viewBox="0 0 28 28" fill="none" aria-label="Logo">
+          <defs>
+            <linearGradient id="g" x1="0" y1="0" x2="1" y2="1">
+              <stop offset="0" stop-color="#ff2e7e"/>
+              <stop offset="1" stop-color="#ff6b3d"/>
+            </linearGradient>
+          </defs>
+          <path d="M4 6c0-1.1.9-2 2-2h3c1.1 0 2 .9 2 2v18H8a4 4 0 0 1-4-4V6Z" fill="url(#g)"/>
+          <path d="M12 6c0-1.1.9-2 2-2h3c1.1 0 2 .9 2 2v18h-3a4 4 0 0 1-4-4V6Z" fill="url(#g)" opacity=".75"/>
+          <path d="M20 6c0-1.1.9-2 2-2h0a2 2 0 0 1 2 2v14a4 4 0 0 1-4 4h0V6Z" fill="url(#g)" opacity=".55"/>
+        </svg>
+        <span>Empty Han</span>
+      </a>
+      <nav class="links">
+        <a href="#Biography">Intro</a>
+        <a href="#Projects">Projects</a>
+        <a href="#Career">Career</a>
+        <a href="#Games">Games</a>
+      </nav>
+      <a class="cta" href="#Contacts">LET’S TALK</a>
+    </header>
+
+    <!-- 3D BACKGROUND -->
+    <canvas id="bg"></canvas>
+
+    <!-- HERO -->
+    <main class="hero">
+      <p class="eyebrow">From Geometry to Games  &  From Code to Creation</p>
+      <h1><span>3D Engineer</span><span class="dot">.</span></h1>
+      <a class="scroll" href="#Biography" aria-label="Scroll down">
+        <svg width="28" height="28" viewBox="0 0 24 24" fill="none">
+          <path d="M6 9l6 6 6-6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+        </svg>
+      </a>
+    </main>
+
+    <!-- CONTENT STUBS (so scroll works) -->
+    <section id="Biography" class="section biography tiled">
+        <div class="container">
+            <h2 class="reveal-up">About Me</h2>
+            <div class="bio-container reveal-up">
+                <div class="bio-avatar">
+                    <img src="assets/avatar.png" alt="Your Avatar" />
+                </div>
+                <div class="bio-text">
+                    <p> I am a New Graduate from <strong>Computer Graphics and Game Technology (CGGT)</strong> program at UPenn.  
+                    I’m passionate about <strong>Game Development, Design, and Play</strong> — Bringing ideas with immersive interactive experiences.</p>
+
+                    <p>I thrive on <strong>Solving Real-World Problems</strong> with <strong>Programming</strong>, blending creativity with technical precision to push the boundaries of how we build and play video games.</p>
+                </div> 
+            </div>
+
+            <div class="bio-skills reveal-up">
+                    <!-- Programming -->
+                    <div class="bio-skillcard">
+                        <h3>Programming</h3>
+                        <ul class="skill-list">
+                            <li>
+                            <i class="devicon-typescript-plain" aria-hidden="true"></i>
+                            <span class="skill-name">TypeScript</span>
+                            </li>
+                            <li>
+                            <i class="devicon-python-plain" aria-hidden="true"></i>
+                            <span class="skill-name">Python</span>
+                            </li>
+                            <li>
+                            <i class="devicon-java-plain" aria-hidden="true"></i>
+                            <span class="skill-name">Java</span>
+                            </li>
+                            <li>
+                            <i class="devicon-cplusplus-plain" aria-hidden="true"></i>
+                            <span class="skill-name">C++</span>
+                            </li>
+                        </ul>
+                    </div>
+                    <!-- Software -->
+                    <div class="bio-skillcard">
+                        <h3>Software</h3>
+                        <ul class="skill-list">
+                            <li>
+                                <i class="devicon-unrealengine-original" aria-hidden="true"></i>
+                                <span class="skill-name">Unreal Engine</span>
+                            </li>
+                            <li>
+                                <i class="devicon-unity-plain" aria-hidden="true"></i>
+                                <span class="skill-name">Unity</span>
+                            </li>
+                            <li>
+                                <i class="devicon-photoshop-plain" aria-hidden="true"></i>
+                                <span class="skill-name">Photoshop</span>
+                            </li>
+                            <li>
+                                <i class="devicon-blender-original" aria-hidden="true"></i>
+                                <span class="skill-name">Blender</span>
+                            </li>
+                        </ul>
+                    </div>
+                    <!-- Language -->
+                    <div class="bio-skillcard">
+                        <h3>Language</h3>
+                        <ul class="skill-list">
+                            <li>
+                                <span class="skill-name">Chinese</span>
+                            </li>
+                            <li>
+                                <span class="skill-name">English</span>
+                                <span class="level">Fluent</span>
+                            </li>
+                            <li>
+                                <span class="skill-name">Japanese</span>
+                                <span class="level">Intermediate</span>
+                                <!--span class="meter"><i style="--p:60"></i></span-->
+                            </li>
+                        </ul>
+
+                        <!--div class="lang-chips">
+                            <span class="chip">EN</span>
+                            <span class="chip">中文</span>
+                            <span class="chip">日本語</span>
+                        </div-->
+                    </div>
+            </div>
+        </div>
+    </section>
+    
+    <section id="Projects" class="section projects alt">
+        <div class="container">
+            <h2 class="reveal-up">Projects</h2>
+            <!-- Featured / Ongoing Project Banner -->
+            <div class="project-banner reveal-up">
+                <div class="banner-media">
+                    <!-- Replace with your own snapshot -->
+                    <img src="assets/project/banner.png" alt="Current project snapshot" loading="lazy" />
+                </div>
+
+                <div class="banner-body">
+                    <div class="banner-kicker">Now Building</div>
+                    <h3 class="banner-title">MultiBlockBench</h3>
+                    <p class="banner-desc">
+                        A TypeScript + Three.js 3D Tool for voxel modeling, vertex/edge/face editing, and Texture
+                        extraction with custom UI Library. Focused on Voxel-Style fast
+                        geometry workflows and export-friendly pipelines.
+                    </p>
+
+                    <ul class="banner-stack">
+                        <li>TypeScript</li>
+                        <li>Vite</li>
+                        <li>Three.js</li>
+                        <li>WebGL</li>
+                    </ul>
+
+                    <div class="banner-actions">
+                    <a class="btn btn-primary" href="https://bangbiu.github.io/MultiblockBench/" target="_blank" rel="noopener">Live Demo</a>
+                    <a class="btn btn-ghost" href="https://github.com/Bangbiu/MultiblockBench" target="_blank" rel="noopener">GitHub</a>
+                    </div>
+                </div>
+            </div>
+            <!-- /Featured / Ongoing Project Banner -->
+            <div class="cardlist-header  reveal-up">
+                <h2>Past Projects</h2>
+                <a href="https://github.com/Bangbiu/" class="btn-link" target="_blank" rel="noopener">
+                    More
+                    <svg class="arrow" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <polyline points="12 5 19 12 12 19"></polyline>
+                    </svg>
+                </a>
+            </div>
+            <div class="project-grid reveal-up">
+                <!-- Card 1 -->
+                <article class="project-card">
+                    <a class="thumb" aria-label="Open Project 1">
+                        <img src="assets/project/card1.png" alt="Project 1 snapshot">
+                    </a>
+                    <div class="body">
+                        <h3>SymphonySphere</h3>
+                        <p>
+                            Immersive VR Playground where players use Instrumental Spheres to transform physics into music
+                        </p>
+                        <div class="stack">
+                            <span class="tag">Unreal Engine 5</span>
+                            <span class="tag">Blueprints</span>
+                            <span class="tag">C++</span>
+                        </div>
+                    </div>
+                    <div class="links">
+                        <a href="https://www.youtube.com/watch?v=9K5EmF5sjBU" class="pill" rel="noopener" target="_blank">Demo</a>
+                        <a href="https://github.com/Bangbiu/SymphonySphere" class="pill ghost" rel="noopener" target="_blank">Repo</a>
+                    </div>
+                </article>
+
+                <!-- Card 2 -->
+                <article class="project-card">
+                    <a class="thumb" aria-label="Open Project 2">
+                        <img src="assets/project/card2.png" alt="Project 2 snapshot">
+                    </a>
+                    <div class="body">
+                        <h3>Helldivers The Board Game</h3>
+                        <p>
+                            Board Game in which players are
+                            tasked with liberating planets and surviving against overwhelming alien forces
+                        </p>
+                        <div class="stack">
+                        <span class="tag">Prototype</span>
+                        <span class="tag">Board Game</span>
+                        <span class="tag">Game Design</span>
+                        </div>
+                    </div>
+                    <div class="links">
+                        <a href="https://www.youtube.com/watch?v=EQAcYFKxzm0" class="pill" rel="noopener" target="_blank">Demo</a>
+                        <a href="https://docs.google.com/document/d/1PYqYuUqHat2sAn2Y8ALAZqOsFOsgbZfmwGnYrIHouzU/edit?tab=t.0#heading=h.ce4hjcf4h9nk" class="pill ghost" rel="noopener" target="_blank">Doc</a>
+                    </div>
+                </article>
+
+                <!-- Card 3 -->
+                <article class="project-card">
+                    <a class="thumb" aria-label="Open Project 3">
+                        <img src="assets/project/card3.png" alt="Project 3 snapshot">
+                    </a>
+                    <div class="body">
+                        <h3>AutoSculptor Maya Plug-in</h3>
+                        <p>
+                            Authoring tool inspired by the paper <em>Autocomplete 3D Sculpting</em>, aiming to enhance digital sculpting workflows
+                        </p>
+                        <div class="stack">
+                        <span class="tag">Maya</span>
+                        <span class="tag">Python</span>
+                        <span class="tag">Plug-in</span>
+                        </div>
+                    </div>
+                    <div class="links">
+                        <a href="https://www.youtube.com/watch?v=sqc2A4Dlj5w" class="pill" rel="noopener" target="_blank">Demo</a>
+                        <a href="https://github.com/teriyake/AutoSculptor" class="pill ghost" rel="noopener" target="_blank">Repo</a>
+                    </div>
+                </article>
+            </div>
+        </div>
+    </section>
+
+    <section id="Career" class="section">
+        <div class="container">
+            <h2>Career</h2>
+            <ol class="edu-timeline" aria-label="Education Journey">
+
+            <!-- 0. UC Berkeley -->
+            <li class="edu-item reveal-up">
+                <div class="edu-node" aria-hidden="true"></div>
+                <img class="edu-logo" src="assets/icon/ucberkeley.svg" alt="University of Wisconsin logo" loading="lazy">
+                <div class="edu-body">
+                    <h3>University of California, Berkeley</h3>
+                    <p>Summer Session</p>
+                </div>
+            </li>
+            <!-- 1. Wisconsin -->
+            <li class="edu-item reveal-up">
+                <div class="edu-node" aria-hidden="true"></div>
+                <img class="edu-logo" src="assets/icon/uwmadison.svg" alt="University of Wisconsin logo" loading="lazy">
+                <div class="edu-body">
+                    <h3>University of Wisconsin, Madison</h3>
+                    <p>Bachelor of Science · Computer Science</p>
+                </div>
+            </li>
+
+            <!-- 2. Waseda -->
+            <li class="edu-item reveal-up">
+                <div class="edu-node" aria-hidden="true"></div>
+                <img class="edu-logo" src="assets/icon/waseda.svg" alt="Waseda University logo" loading="lazy">
+                <div class="edu-body">
+                <h3>Waseda University</h3>
+                <p>Exchange Student</p>
+                </div>
+            </li>
+
+            <!-- 3. UPenn CGGT -->
+            <li class="edu-item reveal-up">
+                <div class="edu-node" aria-hidden="true"></div>
+                <img class="edu-logo" src="assets/icon/UPenn.svg" alt="University of Pennsylvania logo" loading="lazy">
+                <div class="edu-body">
+                <h3>University of Pennsylvania</h3>
+                <p>Master of Science · Computer Graphics & Game Tech</p>
+                </div>
+            </li>
+            </ol>
+        </div>
+    </section>
+    <section id="Games" class="section">
+        <div class="container">
+            <div class="cardlist-header">
+                <h2>Game Play</h2>
+                <a href="https://steamcommunity.com/id/EmptyHundred123/" class="btn-link" target="_blank" rel="noopener">
+                    Steam
+                    <svg class="arrow" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <polyline points="12 5 19 12 12 19"></polyline>
+                    </svg>
+                </a>
+            </div>
+            <ul class="game-list">
+                <li class="game active reveal-up" data-hours="1240">
+                    <img class="game-logo" src="assets/game/Overwatch.png" alt="Helldivers 2 logo" />
+                    <div class="game-body">
+                    <div class="game-row">
+                        <h3 class="game-name">Overwatch 2</h3>
+                        <span class="game-hours"></span>
+                    </div>
+                    <div class="game-bar"><span class="game-fill"></span></div>
+                    </div>
+                </li>
+
+                <li class="game active reveal-up" data-hours="946">
+                    <img class="game-logo" src="assets/game/minecraft.png" alt="Helldivers 2 logo" />
+                    <div class="game-body">
+                    <div class="game-row">
+                        <h3 class="game-name">Minecraft</h3>
+                        <span class="game-hours"></span>
+                    </div>
+                    <div class="game-bar"><span class="game-fill"></span></div>
+                    </div>
+                </li>
+                
+                <li class="game active reveal-up" data-hours="750">
+                    <img class="game-logo" src="assets/game/helldivers2.png" alt="Helldivers 2 logo" />
+                    <div class="game-body">
+                    <div class="game-row">
+                        <h3 class="game-name">Helldivers 2</h3>
+                        <span class="game-hours"></span>
+                    </div>
+                    <div class="game-bar"><span class="game-fill"></span></div>
+                    </div>
+                </li>
+
+                <li class="game active reveal-up" data-hours="23">
+                    <img class="game-logo" src="assets/game/grounded.ico" alt="Helldivers 2 logo" />
+                    <div class="game-body">
+                        <div class="game-row">
+                            <h3 class="game-name">Grounded</h3>
+                            <span class="game-hours"></span>
+                        </div>
+                        <div class="game-bar"><span class="game-fill"></span></div>
+                    </div>
+                </li>
+
+                <li class="game active reveal-up" data-hours="3">
+                    <img class="game-logo" src="assets/game/jumpspace.webp" alt="Helldivers 2 logo" />
+                    <div class="game-body">
+                        <div class="game-row">
+                            <h3 class="game-name">Jump Space</h3>
+                            <span class="game-hours"></span>
+                        </div>
+                        <div class="game-bar"><span class="game-fill"></span></div>
+                    </div>
+                </li>
+
+                <li class="game reveal-up" data-hours="467">
+                    <img class="game-logo" src="assets/game/monsterhunterworld.png" alt="Minecraft logo" />
+                    <div class="game-body">
+                    <div class="game-row">
+                        <h3 class="game-name">Monster Hunter : World</h3>
+                        <span class="game-hours"></span>
+                    </div>
+                    <div class="game-bar"><span class="game-fill"></span></div>
+                    </div>
+                </li>
+
+                <li class="game reveal-up" data-hours="395">
+                    <img class="game-logo" src="assets/game/satisfactory.png" alt="Minecraft logo" />
+                    <div class="game-body">
+                    <div class="game-row">
+                        <h3 class="game-name">Satisfactory</h3>
+                        <span class="game-hours"></span>
+                    </div>
+                    <div class="game-bar"><span class="game-fill"></span></div>
+                    </div>
+                </li>
+
+                <li class="game reveal-up" data-hours="248">
+                    <img class="game-logo" src="assets/game/7daystodie.webp" alt="Minecraft logo" />
+                    <div class="game-body">
+                    <div class="game-row">
+                        <h3 class="game-name">7 Days to Die</h3>
+                        <span class="game-hours"></span>
+                    </div>
+                    <div class="game-bar"><span class="game-fill"></span></div>
+                    </div>
+                </li>
+
+                <li class="game reveal-up" data-hours="158">
+                    <img class="game-logo" src="assets/game/terraria.png" alt="Minecraft logo" />
+                    <div class="game-body">
+                    <div class="game-row">
+                        <h3 class="game-name">Terraria</h3>
+                        <span class="game-hours"></span>
+                    </div>
+                    <div class="game-bar"><span class="game-fill"></span></div>
+                    </div>
+                </li>
+
+                <li class="steam reveal-up">
+                    <a href="https://steamcommunity.com/id/EmptyHundred123/" 
+                        target="_blank" rel="noopener" 
+                        class="steam-btn">
+                        <span class="steam-text">More On</span>
+                        <img src="assets/icon/steam.svg" alt="Steam icon" class="steam-icon" />
+                        <span class="steam-text">Steam</span>
+                    </a>
+                </li>
+            </ul>
+        </div>
+    </section>
+    
+    <section id="Ranks" class="section">
+        <div class="container">
+            <h2>
+                <img src="assets/game/Overwatch.png" alt="Overwatch Logo" class="rank-logo" />
+                Ranks
+            </h2>
+        </div>
+        <!-- Role switchers -->
+        <div class="role-nav">
+            <button id="PrevRoleBtn" class="role-btn prev" aria-label="Previous role">
+                <svg width="40" height="40" viewBox="0 0 24 24" fill="none">
+                    <path d="M15 18l-6-6 6-6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                </svg>
+            </button>
+
+            <button id="NextRoleBtn" class="role-btn next" aria-label="Next role">
+            <svg width="40" height="40" viewBox="0 0 24 24" fill="none">
+                <path d="M9 6l6 6-6 6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
+            </button>
+        </div>
+
+        <canvas id="ranks-canvas"></canvas>
+    </section>
+
+    <section id="Contacts" class="section contact">
+    <div class="contact-container">
+        <h2>Contacts</h2>
+        <ul class="contact-grid reveal-up">
+            <li class="contact-card">
+                <a href="mailto:empty_hundred@outlook.com" target="_blank" rel="noopener">
+                <i class="devicon-google-plain"></i>
+                <span>Email</span>
+                </a>
+            </li>
+            <li class="contact-card">
+                <a href="https://github.com/Bangbiu" target="_blank" rel="noopener">
+                <i class="devicon-github-original"></i>
+                <span>GitHub</span>
+                </a>
+            </li>
+            <li class="contact-card">
+                <a href="https://www.linkedin.com/in/zhiyuanhan0928/" target="_blank" rel="noopener">
+                <i class="devicon-linkedin-plain"></i>
+                <span>LinkedIn</span>
+                </a>
+            </li>
+            <li class="contact-card">
+                <a href="https://steamcommunity.com/id/EmptyHundred123/" target="_blank" rel="noopener">
+                <img src="assets/icon/steam.png" alt="Steam icon" class="steam-icon"/>
+                <span>Steam</span>
+                </a>
+            </li>
+            <li class="contact-card">
+                <a href="/public/Zhiyuan_Han.pdf" target="_blank" rel="noopener">
+                <img src="assets/icon/resume.svg" class="steam-icon"/>
+                <span>Resume</span>
+                </a>
+            </li>
+        </ul>
+    </div>
+    </section>
+    <script type="module" src="/src/main.ts"></script>
+  </body>
+</html>

@@ -1,0 +1,24 @@
+<svg width="128" height="128" fill="none" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 128 128">
+  <!-- Outer ring -->
+  <circle cx="64.00061" cy="64.000305" r="58.45882" stroke="#ffffff" stroke-width="6.09524"/>
+
+  <!-- Split ellipse (circle) arcs: center (65,65), r=30, angles measured from top=0°, clockwise -->
+  <g fill="none" stroke="#ffffff" stroke-width="10" stroke-linecap="sqaured">
+    <!-- Arc 1: 0° → 80° -->
+    <!-- start (65,35), end (94.544,59.791) -->
+    <path d="M65 35 A30 30 0 0 1 94.544 59.791"/>
+
+    <!-- Arc 2: 120° → 200° -->
+    <!-- start (90.981,80), end (54.739,93.191) -->
+    <path d="M90.981 80 A30 30 0 0 1 54.739 93.191"/>
+
+    <!-- Arc 3: 240° → 320° -->
+    <!-- start (39.019,80), end (45.716,42.019) -->
+    <path d="M39.019 80 A30 30 0 0 1 45.716 42.019"/>
+  </g>
+
+  <!-- Three dots -->
+  <circle cx="65" cy="36" r="12" fill="#ffffff"/>
+  <circle cx="39.804" cy="81.607" r="12" fill="#ffffff"/>
+  <circle cx="89.251" cy="82.088" r="12" fill="#ffffff"/>
+</svg>
