@@ -8,25 +8,17 @@ import {
     SRGBColorSpace, 
     TextureLoader 
 } from "three";
-import { Font, FontLoader } from "three/examples/jsm/loaders/FontLoader.js";
 import { TextGeometry } from "three/examples/jsm/geometries/TextGeometry.js";
+import { FileUtils } from "../utils/FileUtils";
 
-const font = await new Promise<Font>((resolve, reject) => {
-    new FontLoader().load(
-        "/public/fonts/BigNoodleTitling_Regular.json", 
-        resolve,
-        undefined,
-        reject
-    );
-});
+const font = await FileUtils.loadFont("BigNoodleTitling_Regular");
 
 class Text3D extends Group {
     public readonly textMesh: Mesh;
-    constructor(text: string, iconName: string) {
+    constructor(text: string, iconFile: string) {
         super();
         const textHeight = 0.18;
         const gap = 0.06;
-        const iconUrl = `/assets/icon/${iconName}`;
         const textGeo = new TextGeometry(text, {
             font,
             size: textHeight,
@@ -54,8 +46,7 @@ class Text3D extends Group {
 
         // Icon
 
-        const tex = new TextureLoader().load(iconUrl);
-        tex.colorSpace = SRGBColorSpace;
+        const tex = FileUtils.loadSprite(iconFile);
 
         const iconMat = new SpriteMaterial({ map: tex, transparent: true });
         const icon = new Sprite(iconMat);

@@ -1,6 +1,9 @@
 import { OBJLoader } from "three/examples/jsm/loaders/OBJLoader.js";
 import { MTLLoader } from "three/examples/jsm/loaders/MTLLoader.js";
-import { Group, LoadingManager, Mesh, SRGBColorSpace } from "three";
+import { Group, LoadingManager, Mesh, SRGBColorSpace, TextureLoader } from "three";
+import { FontLoader, type Font } from "three/examples/jsm/Addons.js";
+
+const BASE = import.meta.env.BASE_URL; // e.g. "/<REPO_NAME>/" on GH Pages, "/" locally
 
 class FileUtils {
     public static async loadObj(fileName: string) {
@@ -8,7 +11,7 @@ class FileUtils {
             return FileUtils.MeshPool.get(fileName)!.clone(false);
         }
 
-        const path = `/assets/models/${fileName}/`;
+        const path = `${BASE}assets/models/${fileName}/`;
         const mtlFile = `${fileName}.mtl`;
         const modelFile = `${fileName}.obj`;
         // Optional: a simple loading manager to see progress
@@ -61,6 +64,26 @@ class FileUtils {
         throw new Error("No Mesh in the File"); // rejects
     }
 
+    public static async loadFont(fileName: string) {
+        return await new Promise<Font>((resolve, reject) => {
+            FileUtils.FontLoader.load(
+                `${BASE}fonts/${fileName}.json`,
+                resolve,
+                undefined,
+                reject
+            );
+        });
+    }
+
+    public static loadSprite(file: string) {
+        const url = `${BASE}assets/icon/${file}`
+        const sprite = FileUtils.TexLoader.load(url);
+        sprite.colorSpace = SRGBColorSpace;
+        return sprite;
+    }
+
+    public static readonly TexLoader = new TextureLoader();
+    public static readonly FontLoader = new FontLoader();
     public static readonly MeshPool: Map<string, Mesh> = new Map();
 }
 

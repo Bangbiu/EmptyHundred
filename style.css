@@ -50,9 +50,9 @@ body{
 /* CANVAS */
 #bg{
     position:absolute; 
-    inset:0; 
     z-index:-1; 
     display:block;
+    max-width: 100%;
 }
 
 /* HERO */
@@ -886,7 +886,7 @@ h1 .dot{color:var(--accent)}
     position: absolute;
     top: 0px;
     left: 0;
-    width: 100%;
+    max-width: 100%;
     height: 100%;
     display: block;
     z-index: -1;    /* behind text */
@@ -962,9 +962,11 @@ h1 .dot{color:var(--accent)}
 
 /* Contacts */
 .contact-container {
-    max-width: 1300px;
-    margin: 0 auto;
-    box-sizing: border-box;
+  max-width: 1300px;
+  margin: 0 auto;              /* center within page */
+  padding-left: 40px;          /* ensure at least 40px space left */
+  padding-right: 40px;         /* ensure at least 40px space right */
+  box-sizing: border-box;
 }
 
 .contact-grid {
