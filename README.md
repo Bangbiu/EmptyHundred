@@ -3,6 +3,7 @@
 
 This repository contains the source code for my interactive **portfolio website** that integrates **real-time 3D rendering**, **custom shaders**, and **responsive UI design**.  The site demonstrates technical proficiency in graphics programming, modern frontend frameworks, and interactive visualization.
 
+[![Live Website](https://img.shields.io/badge/Visit-Portfolio-blueviolet?style=for-the-badge&logo=google-chrome&logoColor=white)](https://bangbiu.github.io/EmptyHundred/)
 
 ## Features
 
